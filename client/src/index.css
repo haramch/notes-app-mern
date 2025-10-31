@@ -11,5 +11,11 @@ body{
 }
 }
 @layer components{
-
+    .input-label
+    {
+        @apply text-xs text-gray-400;
+    }
+}
+:root {
+   --primary:#0795E6
 }
