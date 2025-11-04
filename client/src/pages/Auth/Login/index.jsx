@@ -37,8 +37,9 @@ export default function Login() {
       console.log("Login response:", result.data)
 
       if (result.data.message.toLowerCase().includes("success")) {
-        const { token } = result.data
+        const { token, user } = result.data
         storeToken(token)
+         localStorage.setItem("userName", user.userName);
         setMessage("Login successful")
         setTimeout(() => navigate("/dashboard"), 500)
       } else {

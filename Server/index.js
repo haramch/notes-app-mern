@@ -5,18 +5,22 @@ const {config}=require("dotenv");
 config();
 
 const auth=require('./routes/auth')
+const notes=require('./routes/notes')
 const app = express();
 app.use(express.json())
 app.use(cors(
   {
     origin:"http://localhost:5173",
-  credentials:true
+  credentials:true,
+  allowedHeaders: ["Content-Type", "Authorization"],
   }
 ))
 
 
 
-app.use('/api/auth', auth)
+app.use('/api/auth', auth);
+app.use('/api/notes', notes);
+
 
 
 

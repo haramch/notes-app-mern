@@ -37,8 +37,6 @@ export default function Signup() {
       console.log("Signup response:", result.data);
 
       if (result.data.message.toLowerCase().includes("success")) {
-        const { token } = result.data;
-        storeToken(token);
         setMessage("Signup successful");
 
         setTimeout(() => navigate("/login"), 500);
